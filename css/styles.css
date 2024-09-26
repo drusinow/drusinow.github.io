@@ -2,8 +2,10 @@
     width: 200px;
     height: 100px;
     color: black;
+    background-color: black;
     padding: 10px;
     margin: 10px;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
