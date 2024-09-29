@@ -36,11 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
         profileImage.removeEventListener('click', animateBox);
-        
+        document.getElementById("firstClick").innerHTML = "";
     }
     profileImage.addEventListener('click', animateBox);
 
-    function clickFunction() {
-        document.getElementById("firstClick").innerHTML = "";
-    }
 });
