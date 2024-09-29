@@ -1,16 +1,4 @@
-/*.profile-image {
-    width: 200px;
-    height: 100px;
-    color: black;
-    background-color: black;
-    padding: 10px;
-    margin: 10px;
-    position: absolute;
-    left: 40%;
-    top: 40%;
-    border-radius: 5%;
-}
-*/
+/* css/styles.css */
 
 html, body {
     height: 100%;
@@ -25,9 +13,12 @@ html, body {
     width: 150px;
     height: 150px;
     background-color: #3498db;
-    border-radius: 10px;
+    color: white;
+    font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer; /* Makes it clear it's clickable */
 }
