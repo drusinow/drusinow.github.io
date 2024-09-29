@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // After growing, shrink it and move right and up
                     gsap.to(".profile-image", {
                         scale: 0.9,  // Shrinks smaller than original size
-                        x: 100,       // Move to the right
+                        x: 180,       // Move to the right
                         y: -80,      // Move upwards
                         duration: 0.4,
                         ease: "bounce.out" // Adds a bounce effect
