@@ -3,9 +3,9 @@
 
     window.onload = function () {
         // Set initial state for the box (this is optional but ensures the starting point is set)
-        gsap.set(".box", { scale: 1, x: 0, y: 0 });
+        gsap.set(".profile-image", { scale: 1, x: 0, y: 0 });
 
-        gsap.fromTo(".box", 
+        gsap.fromTo(".profile-image", 
         { 
             scale: 1, 
             x: 0, 
@@ -17,7 +17,7 @@
             ease: "power1.out", // Smooth ease
             onComplete: function() {
             // After the initial grow, it shrinks and moves slightly to the right and up
-            gsap.to(".box", {
+            gsap.to(".profile-image", {
                 scale: 0.9,   // Shrinks smaller than the original size
                 x: 30,        // Move right
                 y: -20,       // Move up
