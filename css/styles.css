@@ -1,4 +1,4 @@
-.profile-image {
+/*.profile-image {
     width: 200px;
     height: 100px;
     color: black;
@@ -9,4 +9,25 @@
     left: 40%;
     top: 40%;
     border-radius: 5%;
+}
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
