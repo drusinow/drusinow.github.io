@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 
             { 
                 scale: 1, // Make it shrink slightly
-                duration: 0.5,
+                duration: 0.6,
                 ease: "circ.out",
                 onComplete: function() {
                     // After growing, shrink it and move right and up
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         scale: 0.9,  // Shrinks smaller than original size
                         x: 180,       // Move to the right
                         y: -80,      // Move upwards
-                        duration: 0.35,
+                        duration: 0.55,
                         ease: "circ.out" // Adds a bounce effect
                     });
                 }
