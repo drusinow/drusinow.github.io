@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
     // Set initial state for the profile-image box
-    gsap.set(".profile-image", { scale: 1, x: 0, y: 0 });
+    gsap.set(".profile-image", { scale: 1.2, x: 0, y: 0 });
 
     // Add click event listener to trigger animation
     document.querySelector('.profile-image').addEventListener('click', function() {
