@@ -1,59 +1,72 @@
-/* css/styles.css */
-
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header at the top of the page */
+.header {
+    width: 100%;
+    max-width: 1800px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    font-size: 24px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 
-.profile-image {
+/* Flexbox layout for the content section */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between boxes */
+    width: 100%;
+    max-width: 1800px;
+}
+
+/* Styling for all boxes */
+.content > div {
     width: 283.5px;
-    height: 459px;
+    height: 275px; /* Adjusted height to make the boxes smaller */
     background-color: #3498db;
     color: white;
     font-size: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer; /* Makes it clear it's clickable */
+    cursor: pointer;
 }
 
-.header {
- width: 1800px;
- height: 100px;
- background-color: #3498db;
- color: white;
- border-radius: 10px;
- box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
+/* Specific styles for individual boxes (if needed) */
 .aboutMe {
-width: 600px;
-height: 510;
-
+    background-color: #e74c3c;
 }
 
 .experience {
-
-
+    background-color: #2ecc71;
 }
 
-.contactMe { 
-
-
+.contactMe {
+    background-color: #9b59b6;
 }
 
 .miniContacts {
-
-
+    background-color: #f1c40f;
 }
 
-.projects { 
-
-
+.projects {
+    background-color: #e67e22;
 }
