@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { 
                 scale: 1.2, // First, make the box slightly larger
                 duration: 0.3,
-                ease: "power1.out",
+                ease: "circ.out",
                 onComplete: function() {
                     // After growing, shrink and move to the right and up
                     gsap.to(".profile-image", {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         x: 30,       // Move to the right
                         y: -20,      // Move upwards
                         duration: 0.4,
-                        ease: "bounce.out" // Adds a bounce effect
+                        ease: "circ.out" // Adds a bounce effect
                     });
                 }
             }
