@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 
             { 
                 scale: 1.2, // First, make the box slightly larger
-                duration: 0.3,
+                duration: 0.7,
                 ease: "circ.out",
                 onComplete: function() {
                     // After growing, shrink and move to the right and up
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         scale: 0.9,  // Shrinks smaller than original size
                         x: 30,       // Move to the right
                         y: -20,      // Move upwards
-                        duration: 0.4,
+                        duration: 0.7,
                         ease: "circ.out" // Adds a bounce effect
                     });
                 }
