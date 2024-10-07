@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Remove the click event listener after the first click
         document.removeEventListener('click', animateBox);
-        document.getElementById("firstClick").style.cursor = "auto"; // Set cursor to default after click
         document.getElementById("firstClick").innerHTML = "";
     }
 

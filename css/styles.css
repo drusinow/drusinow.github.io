@@ -48,18 +48,10 @@ html, body {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+    cursor: auto;
     transition: transform 0.5s ease; /* Smooth transition when moving to grid area */
 }
 
-.screenclick {
-    color: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .parent {
