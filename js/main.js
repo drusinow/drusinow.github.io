@@ -30,18 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
                         x: 0, // Reset x and y as it's now part of the grid layout
                         y: 0,
                         scale: 1,
-                        position: "relative",
+                        postition: "relative",
                         duration: 0.7,
                         ease: "circ.out",
-                                onComplete: function() {
+                        onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
                                         duration: 0.5,
                                         stagger: 0.1 
                                     });
                                 }
-                            });
-                        }
                     });
                 }
             }
