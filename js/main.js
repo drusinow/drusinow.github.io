@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Trigger the animation when the box is clicked
         gsap.fromTo(".profile-image", 
             { 
+                scale: 1.1,  // Initial state
+            }, 
+            { 
                 scale: 0.9, // Shrink it slightly
                 duration: 0.7,
                 ease: "circ.out",
