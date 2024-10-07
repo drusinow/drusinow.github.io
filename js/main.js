@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle the animation and remove the event listener
     function animateBox() {
+        console.log("working")
         // Trigger the animation when the box is clicked
         gsap.fromTo(".profile-image", 
             { 
@@ -56,4 +57,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event listener
     document.addEventListener('click', animateBox);
+    
 });
