@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
+    const screenclick = document.querySelector('.screenclick');
 
     // Function to handle the animation and remove the event listener
     function animateBox() {
@@ -51,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         
         // Remove the click event listener after the first click
-        profileImage.removeEventListener('click', animateBox);
+        screenclick.removeEventListener('click', animateBox);
         document.getElementById("firstClick").style.cursor = "auto"; // Set cursor to default after click
         document.getElementById("firstClick").innerHTML = "";
     }
 
     // Add click event listener
-    profileImage.addEventListener('click', animateBox);
+    screenclick.addEventListener('click', animateBox);
 });
