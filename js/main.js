@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
     // Set initial state for the profile-image box (centered initially)
-    gsap.set(".profile-image", { scale: 1.1, x: 0, y: 0 });
+    gsap.set(".profile-image", { scale: 1.1, x: -100, y: 0 });
 
     // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.fromTo(".profile-image", 
             { 
                 scale: 1.1,  // Initial state
-                x: -50, 
+                x: 0, 
                 y: 0 
             }, 
             { 
