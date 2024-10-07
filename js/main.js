@@ -35,7 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
                             // Lock profile image into the grid position
                             gsap.set(".profile-image", {
                                 scale: 1,
-                                position: "relative" // Ensure it is properly placed in the grid
+                                position: "relative", // Ensure it is properly placed in the grid
+                                onComplete: function() {
+                                    gsap.to(gridBoxes, { 
+                                        opacity: 1,
+                                        duration: 0.5,
+                                        stagger: 0.1 
+                                    });
+                                }
                             });
                         }
                     });
