@@ -1,15 +1,46 @@
-/* Basic reset */
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f0f0f0;
 }
 
-/* Centering the profile box */
+/* Parent Grid Container */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    width: 80%; /* Adjust the width to fit your layout */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Individual grid areas */
+.div1 { grid-area: 1 / 1 / 3 / 13; }    /* Header */
+.div2 { grid-area: 3 / 10 / 11 / 13; }  /* Projects */
+.div3 { grid-area: 11 / 10 / 13 / 13; } /* Mini Contacts */
+.div4 { grid-area: 3 / 7 / 9 / 10; }    /* Profile Image */
+.div5 { grid-area: 3 / 1 / 9 / 7; }     /* About Me */
+.div6 { grid-area: 9 / 5 / 13 / 10; }   /* Contact Me */
+.div7 { grid-area: 9 / 1 / 13 / 5; }    /* Experience */
+
+/* Style for each grid box */
+.box {
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+/* Profile Image specific styling */
 .profile-image {
-    width: 275px; /* Updated width */
-    height: 500px; /* Updated height */
     background-color: #3498db;
     color: white;
     font-size: 16px;
@@ -19,52 +50,5 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Hide elements before the animation */
-.hidden {
-    display: none;
-}
-
-/* Header at the top */
-.header {
-    text-align: left;
-    font-size: 32px;
-    margin-top: 30px;
-}
-
-/* Box container */
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 50px;
-    margin: auto;
-    max-width: 1200px;
-}
-
-/* Individual boxes */
-.box {
-    background-color: #2ecc71;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.box:hover {
-    transform: scale(1.05);
-}
-
-.default-cursor {
-    cursor: auto;
+    transition: transform 0.5s ease; /* Smooth transition when moving to grid area */
 }

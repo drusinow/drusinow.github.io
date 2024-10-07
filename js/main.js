@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Register GSAP plugins
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
-    // Set initial state for the profile-image box
+    // Set initial state for the profile-image box (initial position, scaled up slightly)
     gsap.set(".profile-image", { scale: 1.1, x: 0, y: 0 });
 
-    // Reference to the profile-image element and hidden elements
+    // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
-    const header = document.querySelector('.header');
-    const container = document.querySelector('.container');
 
     // Function to handle the animation and remove the event listener
     function animateBox() {
@@ -20,42 +18,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 y: 0 
             }, 
             { 
-                scale: 0.9, // First, make the box slightly larger
+                scale: 0.9, // Shrink it slightly
                 duration: 0.7,
                 ease: "circ.out",
                 onComplete: function() {
-                    // After shrinking, move the box to the right and up
+                    // Move the profile image to its grid location
                     gsap.to(".profile-image", {
-                        scale: 0.9,  // Shrinks smaller than original size
-                        x: 180,       // Move to the right
-                        y: -80,      // Move upwards
-                        duration: 0.7,
-                        ease: "sine.out",
+                        x: 0, // Reset x and y as it's now part of the grid layout
+                        y: 0,
+                        duration: 1.0,
+                        ease: "power1.inOut",
                         onComplete: function() {
-                            // Once the animation is complete, reveal the header and other boxes
-                            header.classList.remove('hidden');
-                            container.classList.remove('hidden');
-
-                            // Animate the appearance of the header and boxes
-                            gsap.from(header, { opacity: 0, duration: 1, ease: "power2.out" });
-                            gsap.from(".box", {
-                                opacity: 0,
-                                y: 100,
-                                duration: 1,
-                                stagger: 0.2, // Stagger the animation of each box
-                                ease: "power2.out"
+                            // Lock profile image into the grid position
+                            gsap.set(".profile-image", {
+                                scale: 1,
+                                position: "relative", // Return to grid positioning
                             });
                         }
                     });
                 }
             }
         );
-
-        profileImage.classList.add('default-cursor');
         
         // Remove the click event listener after the first click
         profileImage.removeEventListener('click', animateBox);
-        document.getElementById("firstClick").innerHTML = "";
+        document.getElementById("firstClick").style.cursor = "auto"; // Set cursor to default after click
     }
 
     // Add click event listener
