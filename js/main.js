@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Register GSAP plugins
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
+
+    const gridBoxes = document.querySelectorAll('.box');
+
     // Set initial state for the profile-image box (centered initially)
     gsap.set(".profile-image", { scale: 1.1, x: -100, y: 0 });
 
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             // Lock profile image into the grid position
                             gsap.set(".profile-image", {
                                 scale: 1,
-                                position: "relative", // Ensure it is properly placed in the grid
+                                position: "relative" // Ensure it is properly placed in the grid
                             });
                         }
                     });
