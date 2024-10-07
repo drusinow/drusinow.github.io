@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gsap.fromTo(".profile-image", 
             { 
                 scale: 1.1,  // Initial state
-                x: 0, 
+                x: -50, 
                 y: 0 
             }, 
             { 
