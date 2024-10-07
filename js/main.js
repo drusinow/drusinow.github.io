@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Register GSAP plugins
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
-    // Set initial state for the profile-image box (initial position, scaled up slightly)
+    // Set initial state for the profile-image box (centered initially)
     gsap.set(".profile-image", { scale: 1.1, x: 0, y: 0 });
 
     // Reference to the profile-image element
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             // Lock profile image into the grid position
                             gsap.set(".profile-image", {
                                 scale: 1,
-                                position: "relative", // Return to grid positioning
+                                position: "relative", // Ensure it is properly placed in the grid
                             });
                         }
                     });
