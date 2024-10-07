@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         x: 180,       // Move to the right
                         y: -80,      // Move upwards
                         duration: 0.7,
-                        ease: "circ.out" // Adds a bounce effect
+                        ease: "sine.out" // Adds a bounce effect
                     });
                 }
             }
