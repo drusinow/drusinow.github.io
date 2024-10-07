@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Remove the click event listener after the first click
         profileImage.removeEventListener('click', animateBox);
-        document.getElementById("profilebox").innerHTML = "";
+        document.getElementById("firstClick").innerHTML = "";
     }
 
     // Add click event listener
