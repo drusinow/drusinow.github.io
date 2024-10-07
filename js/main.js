@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridBoxes = document.querySelectorAll('.box');
 
     // Set initial state for the profile-image box (centered initially)
-    gsap.set(".profile-image", { scale: 1.1, x: -200, y: 0 });
+    gsap.set(".profile-image", { scale: 1.1, x: -300, y: 0 });
 
     // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
