@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     // After growing, shrink and move to the right and up
                     gsap.to(".profile-image", {
                         scale: 0.9,  // Shrinks smaller than original size
-                        x: 30,       // Move to the right
-                        y: -20,      // Move upwards
+                        x: 180,       // Move to the right
+                        y: -80,      // Move upwards
                         duration: 0.7,
                         ease: "circ.out" // Adds a bounce effect
                     });

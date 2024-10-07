@@ -10,8 +10,8 @@ html, body {
 }
 
 .profile-image {
-    width: 215px; /* Updated width */
-    height: 550px; /* Updated height */
+    width: 275px; /* Updated width */
+    height: 500px; /* Updated height */
     background-color: #3498db;
     color: white;
     font-size: 16px;
