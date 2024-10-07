@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
     // Set initial state for the profile-image box
-    gsap.set(".profile-image", { scale: 1, x: 0, y: 0 });
+    gsap.set(".profile-image", { scale: 1.2, x: 0, y: 0 });
 
     // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
@@ -13,18 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
         // Trigger the animation when the box is clicked
         gsap.fromTo(".profile-image", 
             { 
-                scale: 1,  // Initial state
+                scale: 1.2,  // Initial state
                 x: 0, 
                 y: 0 
             }, 
             { 
-                scale: 1.2, // First, make the box slightly larger
+                scale: 1, // First, make the box slightly larger
                 duration: 0.7,
                 ease: "circ.out",
                 onComplete: function() {
                     // After growing, shrink and move to the right and up
                     gsap.to(".profile-image", {
-                        scale: 0.9,  // Shrinks smaller than original size
+                        scale: 1,  // Shrinks smaller than original size
                         x: 180,       // Move to the right
                         y: -80,      // Move upwards
                         duration: 0.7,
