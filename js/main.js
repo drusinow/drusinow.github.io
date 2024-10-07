@@ -51,10 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
+        profileImage.classList.add('default-cursor');
+        
         // Remove the click event listener after the first click
         profileImage.removeEventListener('click', animateBox);
         document.getElementById("firstClick").innerHTML = "";
-        document.getElementById("firstClick").style.cursor = "auto";
     }
 
     // Add click event listener
