@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.set(".profile-image", { scale: 1.1, x: -300, y: 0 });
 
     // Reference to the profile-image element
-    const profileImage = document.querySelector('.profile-image');
-    const screenclick = document.querySelector('.screenclick');
+   // const profileImage = document.querySelector('.profile-image');
+   // const screenclick = document.querySelector('.screenclick');
 
     // Function to handle the animation and remove the event listener
     function animateBox() {
@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         
         // Remove the click event listener after the first click
-        screenclick.removeEventListener('click', animateBox);
+        document.removeEventListener('click', animateBox);
         document.getElementById("firstClick").style.cursor = "auto"; // Set cursor to default after click
         document.getElementById("firstClick").innerHTML = "";
     }
 
     // Add click event listener
-    screenclick.addEventListener('click', animateBox);
+    document.addEventListener('click', animateBox);
 });
