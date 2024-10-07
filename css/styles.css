@@ -1,14 +1,12 @@
-/* css/styles.css */
-
+/* Basic reset */
 html, body {
     height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 
+/* Centering the profile box */
 .profile-image {
     width: 275px; /* Updated width */
     height: 500px; /* Updated height */
@@ -20,5 +18,49 @@ html, body {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    cursor: pointer; /* Makes it clear it's clickable */
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide elements before the animation */
+.hidden {
+    display: none;
+}
+
+/* Header at the top */
+.header {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+/* Box container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 50px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Individual boxes */
+.box {
+    background-color: #2ecc71;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.05);
 }

@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set initial state for the profile-image box
     gsap.set(".profile-image", { scale: 1.1, x: 0, y: 0 });
 
-    // Reference to the profile-image element
+    // Reference to the profile-image element and hidden elements
     const profileImage = document.querySelector('.profile-image');
+    const header = document.querySelector('.header');
+    const container = document.querySelector('.container');
 
     // Function to handle the animation and remove the event listener
     function animateBox() {
@@ -22,22 +24,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 duration: 0.7,
                 ease: "circ.out",
                 onComplete: function() {
-                    // After growing, shrink and move to the right and up
+                    // After shrinking, move the box to the right and up
                     gsap.to(".profile-image", {
                         scale: 0.9,  // Shrinks smaller than original size
                         x: 180,       // Move to the right
                         y: -80,      // Move upwards
                         duration: 0.7,
-                        ease: "sine.out" // Adds a bounce effect
+                        ease: "sine.out",
+                        onComplete: function() {
+                            // Once the animation is complete, reveal the header and other boxes
+                            header.classList.remove('hidden');
+                            container.classList.remove('hidden');
+
+                            // Animate the appearance of the header and boxes
+                            gsap.from(header, { opacity: 0, duration: 1, ease: "power2.out" });
+                            gsap.from(".box", {
+                                opacity: 0,
+                                y: 100,
+                                duration: 1,
+                                stagger: 0.2, // Stagger the animation of each box
+                                ease: "power2.out"
+                            });
+                        }
                     });
                 }
             }
         );
-        
+
         // Remove the click event listener after the first click
         profileImage.removeEventListener('click', animateBox);
         document.getElementById("firstClick").innerHTML = "";
-        document.getElementById("firtsClick").style.cursor = "auto";
+        document.getElementById("firstClick").style.cursor = "auto";
     }
 
     // Add click event listener
