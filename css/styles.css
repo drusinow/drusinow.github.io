@@ -8,8 +8,7 @@ html, body {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
     grid-template-rows: repeat(12, 1fr); /* 12 equal rows */
-    grid-column-gap: 8px; /* Spacing between columns */
-    grid-row-gap: 1em; /* Spacing between rows */
+    gap: 1em;
     width: 100vw; /* Full width of the viewport */
     height: 100vh; /* Full height of the viewport */
     box-sizing: border-box;
