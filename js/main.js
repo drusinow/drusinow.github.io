@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     gsap.to(".profile-image", {
                         x: 0, // Reset x and y as it's now part of the grid layout
                         y: 0,
-                        scale: 1,
-                        postition: "relative",
                         duration: 0.7,
                         ease: "circ.out",
                         onComplete: function() {
