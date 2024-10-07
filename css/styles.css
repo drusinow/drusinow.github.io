@@ -1,36 +1,15 @@
+/* Basic reset */
 html, body {
     height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
 }
 
-/* Main Grid Container */
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: auto; /* Automatically sized rows */
-    grid-gap: 20px; /* Spacing between grid items */
-    padding: 20px;
-    width: 80%; /* Adjust the width as needed */
-}
-
-/* Grid Item Styling */
-.box {
-    background-color: #3498db;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-}
-
-/* Profile Image Box */
+/* Centering the profile box */
 .profile-image {
+    width: 275px; /* Updated width */
+    height: 500px; /* Updated height */
     background-color: #3498db;
     color: white;
     font-size: 16px;
@@ -40,41 +19,52 @@ html, body {
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    grid-column: span 2; /* Make it span across 2 columns */
-    grid-row: span 2;    /* Make it span across 2 rows */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* Header */
+/* Hide elements before the animation */
+.hidden {
+    display: none;
+}
+
+/* Header at the top */
 .header {
-    grid-column: span 3; /* Header takes up the full width */
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px 0;
+    text-align: left;
+    font-size: 32px;
+    margin-top: 30px;
 }
 
-/* Control size of each box individually */
-.aboutMe {
-    grid-column: span 1; /* Take up 1 column */
-    grid-row: span 1;    /* Take up 1 row */
+/* Box container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 50px;
+    margin: auto;
+    max-width: 1200px;
 }
 
-.experience {
-    grid-column: span 2; /* Span across 2 columns */
-    grid-row: span 1;    /* Span across 1 row */
+/* Individual boxes */
+.box {
+    background-color: #2ecc71;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.contactMe {
-    grid-column: span 1;
-    grid-row: span 1;
+.box:hover {
+    transform: scale(1.05);
 }
 
-.miniContacts {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.projects {
-    grid-column: span 2;
-    grid-row: span 1;
+.default-cursor {
+    cursor: auto;
 }
