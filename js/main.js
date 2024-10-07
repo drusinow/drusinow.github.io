@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridBoxes = document.querySelectorAll('.box');
 
     // Set initial state for the profile-image box (centered initially)
-    gsap.set(".profile-image", { scale: 1.1, x: -100, y: 0 });
+    gsap.set(".profile-image", { scale: 1.1, x: -200, y: 0 });
 
     // Reference to the profile-image element
     const profileImage = document.querySelector('.profile-image');
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         x: 0, // Reset x and y as it's now part of the grid layout
                         y: 0,
                         duration: 1.0,
-                        ease: "power1.inOut",
+                        ease: "circ.inOut",
                         onComplete: function() {
                             // Lock profile image into the grid position
                             gsap.set(".profile-image", {
