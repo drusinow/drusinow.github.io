@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 onComplete: function() {
                     // Move the profile image to its grid location
                     gsap.to(".profile-image", {
-                        x: 0, // Reset x and y as it's now part of the grid layout
-                        y: 0,
                         duration: 0.7,
                         ease: "circ.out",
+                        scale: 1,
+                        postition: "relative",
                         onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
