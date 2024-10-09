@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         x: 0,
                         y: 0,
                         ease: "power1.out",
-                        postition: "relative",
                         onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
