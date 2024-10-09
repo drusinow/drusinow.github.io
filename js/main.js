@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 
             { 
                 scale: 0.9, // Shrink it slightly
-                duration: 0.7,
+                duration: 0.5,
                 ease: "circ.out",
                 onComplete: function() {
                     // Move the profile image to its grid location
                     gsap.to(".profile-image", {
-                        duration: 2,
+                        duration: 0.8,
                         scale: 1,
                         x: 0,
                         y: 0,
                         postition: "relative",
-                        ease: "circ.out",
+                        ease: "power1.out",
                         onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
