@@ -118,13 +118,7 @@ html, body {
 }
 
 .litext{
-    color: #EAD8B1;
-    justify-content: left;
-    align-items: center;
-    border-radius: 10px;
-    padding: 20px;
-    font-size: 18px;
-    opacity: 0;
+    text-align: left;
 }
 
 
