@@ -120,6 +120,12 @@ html, body {
 .litext{
     text-align: left;
 }
+.gittext{
+    text-align: center;
+}
+.lctext{
+    text-align: right;
+}
 
 
 /* Profile Image specific styling */
