@@ -65,17 +65,28 @@ html, body {
     opacity: 0;
 }
 
-.div3{
-    background-color:#3A6D8C ;
+.div3 {
+    background-color: #3A6D8C;
     color: #EAD8B1;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;  /* Space elements evenly */
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
     font-size: 18px;
     opacity: 0;
+}
+
+.div3 a {
+    color: #EAD8B1;      /* Set text color */
+    text-decoration: none;  /* Remove underline */
+    font-size: 18px;
+    transition: color 0.3s ease;  /* Add a hover effect */
+}
+
+.div3 a:hover {
+    color: #f1c40f;  /* Change color on hover */
 }
 
 .div5{
@@ -116,17 +127,6 @@ html, body {
     font-size: 18px;
     opacity: 0;
 }
-
-.litext{
-    text-align: left;
-}
-.gittext{
-    text-align: center;
-}
-.lctext{
-    text-align: right;
-}
-
 
 /* Profile Image specific styling */
 .profile-image {
