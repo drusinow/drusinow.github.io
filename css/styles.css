@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #EAD8B1;
+    font-family: 'Roboto Slab', serif;
 }
 
 .parent {
@@ -81,7 +82,7 @@ html, body {
 .div3 a {
     color: #EAD8B1;      /* Set text color */
     text-decoration: none;  /* Remove underline */
-    font-size: 18px;
+    font-size: 22px;
     transition: color 0.3s ease;  /* Add a hover effect */
 }
 
