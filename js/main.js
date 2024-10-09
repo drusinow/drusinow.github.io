@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
-                                        duration: 1,
-                                        stagger: 0.17
+                                        duration: 0.8,
+                                        stagger: 0.1
                                     });
                                 }
                     });
