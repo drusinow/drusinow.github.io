@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 onComplete: function() {
                     // Move the profile image to its grid location
                     gsap.to(".profile-image", {
-                        duration: 0.7,
+                        duration: 2,
                         scale: 1,
                         x: 0,
                         y: 0,
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         onComplete: function() {
                                     gsap.to(gridBoxes, { 
                                         opacity: 1,
-                                        duration: 0.5,
+                                        duration: 0.6,
                                         stagger: 0.1 
                                     });
                                 }
