@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gridBoxes = document.querySelectorAll('.box');
     const projectsBox = document.querySelector('.div2');
     const parentGrid = document.querySelector('.parent');
+    const profileImage = document.querySelector('.profile-image');
 
     // Set initial state for the profile-image box (centered initially)
     gsap.set(".profile-image", { scale: 1.1, x: -267, y: 0 });
@@ -62,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!isExpanded) {
             // Expand animation
-            gsap.to(gridBoxes, { 
-                opacity: 1,
+            gsap.to(gridBoxes, profileImage, { 
+                opacity: 0,
                 duration: 0.8,
                 stagger: 0.1
             });
