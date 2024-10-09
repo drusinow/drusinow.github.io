@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const gridBoxes = document.querySelectorAll('.box');
+    const projectsBox = document.querySelector('.div2');
 
     // Set initial state for the profile-image box (centered initially)
     gsap.set(".profile-image", { scale: 1.1, x: -267, y: 0 });
@@ -51,5 +52,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event listener
     document.addEventListener('click', animateBox);
+
+    function expandProjectsBox() {
+        // GSAP animation to expand the box
+        gsap.to(projectsBox, {
+            duration: 0.8,
+            width: "calc(100% - 2em)",  // Full width, accounting for 1em padding on both sides
+            height: "calc(100vh - 3em)", // Full height, accounting for header and padding
+            top: "0",                    // Align to the top of the grid (below the header)
+            ease: "power4.inOut",         // Smooth easing
+            position: "absolute",         // Make the box cover most of the screen
+            left: "1em",                  // Maintain grid padding on the left
+            right: "1em",                 // Maintain grid padding on the right
+            zIndex: 10,                   // Bring the box to the front
+            borderRadius: "10px",         // Maintain rounded corners
+        });
+    }
+
+    // Add click event listener to the projects box
+    projectsBox.addEventListener('click', expandProjectsBox);
+
     
 });
