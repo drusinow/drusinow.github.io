@@ -62,6 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!isExpanded) {
             // Expand animation
+            gsap.to(gridBoxes, { 
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1
+            });
             gsap.to(projectsBox, {
                 duration: 0.8,
                 ease: "power4.inOut",
