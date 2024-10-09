@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #EAD8B1;
 }
 
 .parent {
@@ -37,6 +38,33 @@ html, body {
     font-size: 18px;
     opacity: 0;
 }
+
+.div1{
+    background-color:#3A6D8C ;
+}
+
+.div2{
+    background-color:#3A6D8C ;
+}
+
+.div3{
+    background-color:#3A6D8C ;
+}
+
+.div5{
+    background-color:#3A6D8C ;
+}
+
+.div6{
+    background-color:#6A9AB0 ;
+}
+
+.div7{
+    background-color:#3A6D8C ;
+}
+
+
+
 
 /* Profile Image specific styling */
 .profile-image {
