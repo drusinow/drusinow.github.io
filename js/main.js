@@ -63,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!isExpanded) {
             // Expand animation
-            gsap.to(gridBoxes, profileImage, { 
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1
-            });
             gsap.to(projectsBox, {
                 duration: 0.8,
                 ease: "power4.inOut",
@@ -76,6 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 gridColumn: "1 / span 12",    // Span across all columns
                 gridRow: "3 / span 10",       // Span the rows while accounting for the header
                 zIndex: 10,                   // Ensure it's on top
+            });
+            gsap.to(gridBoxes, profileImage, { 
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1
             });
         } else {
             // Collapse animation to return to original size
