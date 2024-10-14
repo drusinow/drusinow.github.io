@@ -2,33 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // Register GSAP plugins
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollToPlugin, MotionPathPlugin, TextPlugin);
 
-
-    const gridBoxes = document.querySelectorAll('.box');
-    const projectsBox = document.querySelector('.div2');
-    const parentGrid = document.querySelector('.parent');
-    const profileImage = document.querySelector('.profile-image');
+    const gridBoxes = document.querySelectorAll('.box'); // All grid boxes
+    const projectsBox = document.querySelector('.div2'); // Projects box
+    const headerBox = document.querySelector('.div1');   // Header box
+    const profileImage = document.querySelector('.profile-image'); // Profile image
 
     // Set initial state for the profile-image box (centered initially)
     gsap.set(".profile-image", { scale: 1.1, x: -267, y: 0 });
 
-    // Reference to the profile-image element
-   // const profileImage = document.querySelector('.profile-image');
-   // const screenclick = document.querySelector('.screenclick');
-
-    // Function to handle the animation and remove the event listener
+    // Starting animation for profile image and fade in for grid boxes
     function animateBox() {
-        console.log("working")
-        // Trigger the animation when the box is clicked
+        console.log("Profile Image Animation Triggered");
+
+        // Shrink profile image slightly and then move to its grid position
         gsap.fromTo(".profile-image", 
+            { scale: 1.1 }, 
             { 
-                scale: 1.1,  // Initial state
-            }, 
-            { 
-                scale: 0.9, // Shrink it slightly
-                duration: 0.5,
-                ease: "circ.out",
+                scale: 0.9, 
+                duration: 0.5, 
+                ease: "circ.out", 
                 onComplete: function() {
-                    // Move the profile image to its grid location
                     gsap.to(".profile-image", {
                         duration: 0.8,
                         scale: 1,
@@ -36,61 +29,66 @@ document.addEventListener("DOMContentLoaded", function () {
                         y: 0,
                         ease: "power4.out",
                         onComplete: function() {
-                                    gsap.to(gridBoxes, { 
-                                        opacity: 1,
-                                        duration: 0.8,
-                                        stagger: 0.1
-                                    });
-                                }
+                            gsap.to(gridBoxes, { 
+                                opacity: 1, 
+                                duration: 0.8, 
+                                stagger: 0.1 
+                            });
+                        }
                     });
                 }
             }
         );
         
-        // Remove the click event listener after the first click
+        // Disable further clicks after initial animation
         document.removeEventListener('click', animateBox);
         document.getElementById("firstClick").innerHTML = "";
     }
 
-    // Add click event listener
+    // Add click event listener to start the first animation
     document.addEventListener('click', animateBox);
 
-    let isExpanded = false;
+    let isExpanded = false; // To track whether the projects box is expanded or not
 
-    // Function to handle the expansion animation
+    // Function to handle the expansion of the Projects box
     function expandProjectsBox() {
         const state = Flip.getState(projectsBox); // Capture the current position
 
         if (!isExpanded) {
-            // Expand animation
+            // Expand animation - Projects box grows and takes over grid below header
             gsap.to(projectsBox, {
                 duration: 0.8,
                 ease: "power4.inOut",
-                width: "calc(100% - 2em)",  // Full width within the grid (accounting for 1em padding)
-                height: "calc(100vh - 4em)", // Full height within the grid, leaving space for header and padding
-                gridColumn: "1 / span 12",    // Span across all columns
-                gridRow: "3 / span 10",       // Span the rows while accounting for the header
-                zIndex: 10,                   // Ensure it's on top
+                gridColumn: "1 / span 12",   // Span all columns (12 columns)
+                gridRow: "3 / span 10",      // Span all rows below the header
+                zIndex: 10,                  // Bring the Projects box to the top
             });
-            gsap.to(gridBoxes, profileImage, { 
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1
+
+            // Fade out all other boxes except the header and projects
+            gridBoxes.forEach(box => {
+                if (box !== projectsBox && box !== headerBox) {
+                    gsap.to(box, { opacity: 0, duration: 0.5 });
+                }
             });
         } else {
-            // Collapse animation to return to original size
+            // Collapse animation - return Projects box to original grid placement
             gsap.to(projectsBox, {
                 duration: 0.8,
                 ease: "power4.inOut",
-                width: "",    // Restore default grid size
-                height: "",   // Restore default grid size
-                gridColumn: "10 / 13", // Original grid placement
-                gridRow: "3 / 11",     // Original grid placement
-                zIndex: 1,
+                gridColumn: "10 / 13",       // Restore original grid column
+                gridRow: "3 / 11",           // Restore original grid row
+                zIndex: 1,                   // Restore original z-index
+            });
+
+            // Fade other boxes back in
+            gridBoxes.forEach(box => {
+                if (box !== projectsBox && box !== headerBox) {
+                    gsap.to(box, { opacity: 1, duration: 0.5 });
+                }
             });
         }
 
-        // Flip plugin to animate from the original position
+        // Animate the transition between the states
         Flip.from(state, {
             duration: 0.8,
             ease: "power4.inOut",
@@ -100,8 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
         isExpanded = !isExpanded;
     }
 
-    // Add click event listener to the projects box
+    // Add click event listener to the Projects box
     projectsBox.addEventListener('click', expandProjectsBox);
-
-    
 });
