@@ -1,0 +1,86 @@
+/* Transition properties */
+.box {
+    transition: opacity 0.3s ease;
+    will-change: transform, opacity;
+}
+
+/* Expanded state animations */
+.div2, .div7 {
+    transition: all 0.8s ease;
+    will-change: transform, grid-area;
+}
+
+.div2.expanded, .div7.expanded {
+    transition: all 0.8s ease;
+}
+
+/* Content transitions */
+.projects-expanded-content,
+.experience-expanded-content {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.projects-expanded-content.visible,
+.experience-expanded-content.visible {
+    opacity: 1;
+    height: auto;
+}
+
+/* Button hover animations */
+.header-btn {
+    transition: transform 0.1s ease-in-out;
+}
+
+.header-btn:hover {
+    transform: scale(1.1);
+}
+
+.div3 a {
+    transition: transform 0.1s ease-in-out;
+}
+.div3 a:hover {
+    transform: scale(1.1);
+}
+.div6 {
+    transition: transform 0.3s ease-in-out;
+}
+.div6:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.div2 {
+    transition: transform 0.3s ease-in-out;
+}
+.div2:hover {
+    transform: scale(1.02);
+    
+}
+.div7 {
+    transition: transform 0.3s ease-in-out;
+}
+.div7:hover {
+    transform: scale(1.02);
+    
+}
+
+/* Settings icon animation */
+.settingsicon {
+    transition: transform 1.8s ease-out;
+}
+
+/* Profile image transitions */
+.profile-image {
+    transition: transform 0.8s ease-out;
+}
+
+/* Card hover animations */
+.project-card,
+.experience-card {
+    transition: transform 0.2s ease-out;
+}
+
+.project-card:hover,
+.experience-card:hover {
+    transform: translateY(-5px);
+}

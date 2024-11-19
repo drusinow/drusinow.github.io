@@ -6,41 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dafydd Rusinow Developer Portfolio</title>
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/animations.css"/>
+    <link rel="stylesheet" href="css/responsive.css"/>
+    <link rel="icon" href="images/setting (2).png">
 </head>
 <body>
-    <div class="parent">
-        <div class="div1 box">Dafydd &nbsp; <b>Rusinow</b>
+    <div id="loading-overlay">
+        <div class="loader"></div>
+    </div>
+    
+            <div class="parent">
+                <!-- Header -->
+        <div class="div1 box">
+            <span>Dafydd<strong> Rusinow</strong> //Currently Under Development</span>
+            <nav class="header-clickables">
+                <button class="header-btn">Contact</button>
+            </nav>
         </div>
 
-        <div class="div2 box">Projects</div>
 
-        <!--minicontacts-->
+        <!-- Main sections -->
+        <div class="div2 box" id="projects-section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-expanded-content">
+                <!-- Projects content will be loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- Other sections remain the same -->
         <div class="div3 box">
             <a class="litext" href="https://www.linkedin.com/in/dafydd-rusinow-55473826a/" target="_blank">LinkedIn</a>
             <a class="gittext" href="https://github.com/drusinow" target="_blank">Github</a>
             <a class="lctext" href="https://leetcode.com/u/DafyddRusinow/" target="_blank">LeetCode</a>
         </div>
 
-        <div class="div4 profile-image" id="firstClick">Click to Enter</div> <!-- Profile Image -->
-        <div class="div5 box">About Me</div>
-        <div class="div6 box">Contact Me
-
+        <div class="div4 profile-image" id="firstClick" style="visibility: hidden">
+            <img src="images/Linkedin.png" alt="Profile Picture" class="profile-picture">
         </div>
-        <div class="div7 box">Experience</div>
+
+        <div class="div5 box" id="about-section">
+            <div class="about-container">
+                <!-- Content will be loaded dynamically -->
+            </div>
+            <img src="images/setting (2).png" class="settingsicon">
+        </div>
+
+        <div class="div6 box">
+            <span><b>Contact</b> Me</span>
+            <img src="images/forward (1).png" class="forwardimg">
+        </div>
+        
+        <div class="div7 box" id="experience-section">
+            <div class="section-content">Experience</div>
+            <div class="experience-expanded-content hidden">
+                <!-- Experience content will be loaded dynamically -->
+            </div>
+        </div>
     </div>
 
-    <!-- Gsap CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    
+    <!-- Data -->
+    <script src="js/data/projects.js"></script>
+    <script src="js/data/experience.js"></script>
+    <script src="js/data/about.js"></script>
+    <!-- Components -->
+    <script src="js/components/introAnimation.js"></script>
+    <script src="js/components/projectsSection.js"></script>
+    <script src="js/components/experienceSection.js"></script>
+    <script src="js/components/aboutSection.js"></script>
 
-    <!-- Main Script -->
+    <!-- Core -->
+    <script src="js/pageManager.js"></script>
     <script src="js/main.js"></script>
 </body>
-</html>
-
 </html>
