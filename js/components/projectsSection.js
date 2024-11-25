@@ -39,25 +39,26 @@ class ProjectsSection {
         this.loadProjects();
         this.addEventListeners();
     }
-
     loadProjects() {
         const projects = projectsData[this.currentTab];
-        if (project.link == "https://github.com/") {
-            project-link.innerHTML("Currently Unavailable")
-        } else {
-            
-        }
-        const projectsHTML = projects.map(project => `
-            <div class="project-card">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
-                <div class="technologies">
-                    ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        const projectsHTML = projects.map(project => {
+            // Check if the project link is the placeholder
+            const projectLink = project.link === "https://github.com/" 
+                ? "Currently Unavailable" 
+                : `<a href="${project.link}" target="_blank" class="project-link">View Project</a>`;
+    
+            return `
+                <div class="project-card">
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <div class="technologies">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                    ${projectLink} <!-- Use the variable here -->
                 </div>
-                <a href="${project.link}" target="_blank" class="project-link">View Project</a>
-            </div>
-        `).join('');
-        
+            `;
+        }).join('');
+    
         this.projectsContent.innerHTML = projectsHTML;
     }
 
