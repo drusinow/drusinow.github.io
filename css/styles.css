@@ -1,11 +1,11 @@
 /* Base Styles */
 html, body {
-    height: 100%;
+    height: auto;
     margin: 0;
     padding: 0;
     background-color: #BFDBF7;
     font-family: 'Roboto Slab', serif;
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 /* Grid Layout */
@@ -350,24 +350,38 @@ html, body {
     display: none;
 }
 
-/* Mobile Responsive */
+
+/* Mobile devices */
 @media (max-width: 768px) {
     .parent {
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(12, 1fr);
-        gap: 0.5em;
-        padding: 0.5em;
+        display: flex; /* Use flexbox for vertical stacking */
+        flex-direction: column; /* Stack sections vertically */
+        width: 100vw; /* Full width */
+        height: auto; /* Allow height to be determined by content */
+        overflow-y: auto; /* Allow vertical scrolling */
     }
 
-    .div1 { grid-area: 1 / 1 / 3 / 7; }
-    .div2 { grid-area: 3 / 4 / 11 / 7; }
-    .div3 { grid-area: 11 / 4 / 13 / 7; }
-    .div4 { grid-area: 3 / 1 / 9 / 4; }
-    .div5 { grid-area: 3 / 1 / 9 / 4; }
-    .div6 { grid-area: 9 / 2 / 13 / 6; }
-    .div7 { grid-area: 9 / 1 / 13 / 4; }
-}
+    .div1 { 
+        flex: 0 0 60px; /* Header takes a fixed height */
+    } 
+    .div5 { 
+        flex: 0 0 auto; /* About Section takes height based on content */
+    } 
+    .div7 { 
+        flex: 0 0 auto; /* Experience Section takes height based on content */
+    } 
+    .div2 { 
+        flex: 0 0 auto; /* Projects Section takes height based on content */
+    } 
+    .div6 { 
+        flex: 0 0 auto; /* Mini Contact Section takes height based on content */
+    }
 
+    /* Hide profile image */
+    .profile-image {
+        display: none; /* Hide profile image */
+    }
+}
 /* About Section */
 .div5 {
     display: flex;

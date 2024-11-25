@@ -17,9 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Make profile image visible
                 document.getElementById('firstClick').style.visibility = 'visible';
                 
-                // Start intro animation
-                if (pageManager.introAnimation) {
-                    pageManager.introAnimation.playIntro();
+                // Check if the device is mobile
+                if (window.innerWidth > 768) { // Only play intro animation on larger screens
+                    // Start intro animation
+                    if (pageManager.introAnimation) {
+                        pageManager.introAnimation.playIntro();
+                    }
+                } else {
+                    // Directly show content on mobile
+                    pageManager.introAnimation.showContent();
                 }
             }
         });

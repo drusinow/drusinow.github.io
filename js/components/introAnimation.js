@@ -40,11 +40,11 @@ class IntroAnimation {
         // Then start the animation sequence
         .to([this.profileImage, this.profilePicture], {
             scale: 0.9,
-            duration: 0.8,
+            duration: 0.4,
             ease: "circ.out"
         })
         .to([this.profileImage, this.profilePicture], {
-            duration: 0.8,
+            duration: 0.4,
             scale: 1,
             x: 0,
             y: 0,
@@ -52,7 +52,7 @@ class IntroAnimation {
         })
         .to(this.gridBoxes, {
             opacity: 1,
-            duration: 0.8,
+            duration: 0.6,
             stagger: 0.1
         })
         .to(this.settingsicon, {
@@ -60,7 +60,7 @@ class IntroAnimation {
             scale: 0.8,
             duration: 1.8,
             ease: "power2.out"
-        }, "-=0.8"); // Start slightly before previous animation ends
+        }, "-=0.1"); // Start slightly before previous animation ends
 
         // Update profile image content
         if (document.getElementById("firstClick")) {
