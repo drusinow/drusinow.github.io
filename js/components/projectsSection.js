@@ -42,6 +42,9 @@ class ProjectsSection {
 
     loadProjects() {
         const projects = projectsData[this.currentTab];
+        if (project.link == "https://github.com/") {
+            project-link.innerHTML("Currently Unavailable")
+        } 
         const projectsHTML = projects.map(project => `
             <div class="project-card">
                 <h3>${project.title}</h3>

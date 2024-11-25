@@ -15,9 +15,9 @@ const projectsData = {
     ],
     inProgress: [
         {
-            title: "A high frequency trading bot",
+            title: "A high frequency trading algorithm",
             description: "A high frequency trading bot that uses a combination of technical indicators and math to make trading decisions.",
-            technologies: ["Python", "Binance API", "TA-Lib","+Many More"],
+            technologies: ["Python", "Binance API", "TA-Lib","+ Many More"],
             link: "https://github.com/"
         },
         {
